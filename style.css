@@ -1,13 +1,17 @@
 /* =========================
    Global Styles & Animation
    ========================= */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Times New Roman', Arial, sans-serif;
     margin: 0;
     background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
     color: #ffffff;
     position: relative;
-    overflow-x: hidden;
     padding-bottom: 50px;
     animation: pulseBG 20s ease-in-out infinite;
 }
@@ -30,6 +34,7 @@ body::before, body::after {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
     animation: float 8s infinite ease-in-out alternate;
+    z-index: 0;
 }
 
 body::before {
@@ -44,6 +49,21 @@ body::after {
     height: 400px;
     bottom: -200px;
     right: -200px;
+}
+
+@media (max-width: 768px) {
+    body::before {
+        width: 150px;
+        height: 150px;
+        left: -50px;
+    }
+
+    body::after {
+        width: 200px;
+        height: 200px;
+        right: -50px;
+        bottom: -100px;
+    }
 }
 
 @keyframes float {
@@ -63,6 +83,8 @@ header {
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     border-bottom: 3px solid #ffffff;
+    position: relative;
+    z-index: 1;
 }
 
 @keyframes gradientShift {
@@ -325,10 +347,13 @@ nav a:hover {
    About
    ========================= */
 .about-card {
-    background-color: #463b3baa;
-    padding: 30px;
+    border: 2px solid #007cf0;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 30px 20px;
+    margin: 40px auto;
+    max-width: 900px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 124, 240, 0.2);
 }
 
 .about-card:hover {
@@ -418,4 +443,24 @@ a:hover {
     list-style: none;
     padding: 0;
     justify-content: center;
+}
+
+#contact {
+    border: 2px solid #007cf0;
+    border-radius: 10px;
+    padding: 30px 20px;
+    margin: 40px auto;
+    max-width: 900px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 223, 216, 0.2);
+}
+
+#projects {
+    border: 2px solid #007cf0;
+    border-radius: 10px;
+    padding: 20px 35px;
+    margin: 40px auto;
+    max-width: 900px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 124, 240, 0.2);
 }
